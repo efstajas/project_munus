@@ -1,0 +1,18 @@
+@import "./Global/spacing.sass"
+@import "./Global/colors.sass"
+@import "./Global/typography.sass"
+
+body
+    margin: 0
+
+.app
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    text-align: center
+    color: #333
+    display: flex
+    transition: background-color .3s
+
+    &.dark
+        color: #fff
+        background-color: #222329

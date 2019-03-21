@@ -1,0 +1,52 @@
+@import '@/styles/Global.sass'
+	
+.fade-enter-active, .fade-leave-active
+  transition: opacity .3s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+.SideNavItem
+	@include typography("normal")
+	height: 48px
+	padding: 0 16px
+	display: flex
+	flex-direction: row
+	align-items: center
+	border-radius: 8px
+	overflow: hidden
+	cursor: pointer
+	transition: background-color .3s
+	text-decoration: none
+
+	&.active
+		background-color: $darkLevel
+			
+	&:hover
+		background-color: $darkLevel
+
+	&.dark.active
+		background-color: $lightLevel
+
+	&:hover.dark
+		background-color: $lightLevel
+
+	&.minimized
+      
+	.icon
+		width: 24px
+		height: 24px
+		position: absolute
+
+	.content
+		margin-left: 56px
+		font-weight: bold
+		font-size: 16px
+		color: #333
+
+	&.dark
+		.content
+			color: #fff
+
+		.icon
+			filter: invert(1)

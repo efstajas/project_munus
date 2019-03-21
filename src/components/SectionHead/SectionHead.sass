@@ -1,0 +1,22 @@
+@import '@/styles/Global.sass'
+
+.SectionHead
+    display: flex
+    width: 100%
+    align-items: center
+    height: 24px
+
+    .title
+        @include typography('smallcaps')
+        flex-grow: 0
+        margin-right: 8px
+
+    .line
+        flex-grow: 1
+        background-color: $darkLevel
+        height: 4px
+        border-radius: 4px
+
+    &.dark
+        .line
+            background-color: $lightLevel
