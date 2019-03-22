@@ -8,11 +8,21 @@ body
 .app
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
-    text-align: center
     color: #333
     display: flex
     transition: background-color .3s
 
+    .app-content
+        margin: 120px 5% 64px 5%
+        width: 100%
+
     &.dark
         color: #fff
         background-color: #222329
+
+.viewTransition-enter-active, .viewTransition-leave-active
+    transition: all .2s
+
+.viewTransition-enter, .viewTransition-leave-to
+    opacity: 0
+    transform: translateY(10px)

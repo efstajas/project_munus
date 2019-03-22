@@ -6,8 +6,8 @@
     <div class="items">
       <div class="top">
         <SideNavItem
-          v-on:click.native="selectedItem = item.id"
-          :active="(selectedItem === item.id)"
+          v-on:click.native="selectedSlug = item.slug"
+          :active="($route.name === item.slug)"
           v-for="item in sideNavData.items"
           :key="item.id"
           :title="item.title"
@@ -21,8 +21,8 @@
       <div class="bottom">
 				<ColorThemePicker /> 
         <SideNavItem
-          v-on:click.native="selectedItem = item.id"
-          :active="(selectedItem === item.id)"
+          v-on:click.native="selectedSlug = item.slug"
+          :active="($route.name === item.slug)"
           v-for="item in sideNavData.bottomItems"
           :key="item.id"
           :title="item.title"
@@ -51,7 +51,7 @@ export default {
   data() { 
     return {
       sideNavData: SideNavData,
-      selectedItem: 1,
+      selectedSlug: 1,
       collapsed: true,
       hamburgerImage: hamburgerIcon
     };

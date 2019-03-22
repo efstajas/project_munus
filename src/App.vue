@@ -1,20 +1,18 @@
 <template>
   <div class="app" :class="{dark: $store.state.dark}">
     <SideNav />
-    <MainGrid>
-      <router-view/>
-    </MainGrid>
+    <transition name="viewTransition" mode="out-in">
+      <router-view class="app-content"/>
+    </transition>
   </div>
 </template>
 
 <script>
 import SideNav from '@/components/SideNav'
-import MainGrid from '@/components/MainGrid'
 
 export default {
   components: {
     SideNav,
-    MainGrid
   }
 }
 </script>

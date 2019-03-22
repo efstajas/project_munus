@@ -2,9 +2,7 @@
     <div class="Dashboard">
         <div class="updates">
             <MainGrid>
-                <SectionHead title="Updates to your views"/>
-                <UpdateCard />
-                <UpdateCard />
+                <SectionHead title="Campaigns"/>
             </MainGrid>
         </div>
         <div class="overview">
@@ -17,17 +15,15 @@
 
 <script>
 import SectionHead from "@/components/SectionHead"
-import UpdateCard from "@/components/Cards/UpdateCard"
 import MainGrid from "@/components/MainGrid"
 
 export default {
     name: "Dashboard",
     components: {
         SectionHead,
-        UpdateCard,
         MainGrid
     }
 }
 </script>
 
-<style scoped lang="sass" src="./Dashboard.sass">
+<style scoped lang="sass" src="./Campaigns.sass">

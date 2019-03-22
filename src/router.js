@@ -15,7 +15,13 @@ export default new Router({
     },
     {
       path: '/dashboard',
+      name: 'dashboard',
       component: () => import(/* webpackChunkName: "dashboard" */ `@/views/Dashboard`)
+    },
+    {
+      path: '/campaigns',
+      name: 'campaigns',
+      component: () => import(/* webpackChunkName: "campaigns" */ `@/views/Campaigns`)
     }
   ]
 })
