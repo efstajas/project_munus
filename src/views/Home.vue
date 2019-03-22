@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    Home View
+
   </div>
 </template>
 
@@ -8,6 +8,9 @@
 export default {
   name: 'home',
   components: {
+  },
+  mounted() {
+    this.$router.push('/dashboard')
   }
 }
 </script>
