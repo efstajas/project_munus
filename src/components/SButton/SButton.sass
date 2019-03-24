@@ -1,4 +1,5 @@
 @import '@/styles/Global.sass'
+@import '@/styles/elevation.sass'
 
 .SButton
     @include typography(small)
@@ -7,7 +8,6 @@
     cursor: pointer
     display: flex
     align-items: center
-    transition: background-color .3s
     margin: -8px 0
 
     .inner
@@ -18,6 +18,11 @@
         line-height: 32px
         min-width: 96px
         text-align: center
+        transition: background-color .3s, box-shadow $elevation-transition-duration $elevation-transition-curve
+        @include elevation(0, false)
+
+        &:hover
+            @include elevation(2, false)
 
     &.dark
         .inner

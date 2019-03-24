@@ -1,9 +1,4 @@
-import Dashboard from "@/assets/Dashboard.svg";
-import Discount from "@/assets/Discount.svg";
-import List from "@/assets/List.svg";
-import Bell from "@/assets/Bell.svg";
-import Settings from "@/assets/Settings.svg";
-import Help from "@/assets/Help.svg";
+
 
 export default {
   items: [
@@ -11,20 +6,22 @@ export default {
       id: 1,
       title: "Dashboard",
       icon: Dashboard,
-      slug: "dashboard"
+      slug: "dashboard",
     },
     {
       id: 2,
       title: "Campaigns",
       icon: Discount,
       rgb: [6, 142, 249],
-      slug: "campaigns"
+      slug: "campaigns",
+      color: [6,142,249]
     },
     {
       id: 3,
       title: "Offers",
       icon: List,
-      slug: "offers"
+      slug: "offers",
+      color: [244,114,42]
     }
   ],
   bottomItems: [

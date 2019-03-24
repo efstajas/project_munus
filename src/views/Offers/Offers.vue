@@ -1,16 +1,11 @@
 <template>
-    <div class="Dashboard">
+    <div class="Offers">
         <div class="opener">
             <Icon class="icon" :url="$route.meta.icon" :rgba="$route.meta.color" circle/>
-            <h1>Campaigns</h1>
+            <h1>Offers</h1>
         </div>
         <div class="updates">
             <MainGrid>
-            </MainGrid>
-        </div>
-        <div class="overview">
-            <MainGrid>
-                
             </MainGrid>
         </div>
     </div>
@@ -29,4 +24,4 @@ export default {
 }
 </script>
 
-<style scoped lang="sass" src="./Campaigns.sass">
+<style scoped lang="sass" src="./Offers.sass">

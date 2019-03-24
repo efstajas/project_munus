@@ -1,9 +1,6 @@
 <template>
-    <div class="Dashboard">
-        <div class="opener">
-            <Icon class="icon" :url="$route.meta.icon" :rgba="$route.meta.color" circle/>
-            <h1>Campaigns</h1>
-        </div>
+    <div class="Updates">
+        <h1>Updates</h1>
         <div class="updates">
             <MainGrid>
             </MainGrid>
@@ -17,16 +14,16 @@
 </template>
 
 <script>
+import SectionHead from "@/components/SectionHead"
 import MainGrid from "@/components/MainGrid"
-import Icon from "@/components/Icon"
 
 export default {
-    name: "Dashboard",
+    name: "Updates",
     components: {
-        MainGrid,
-        Icon
+        SectionHead,
+        MainGrid
     }
 }
 </script>
 
-<style scoped lang="sass" src="./Campaigns.sass">
+<style scoped lang="sass" src="./Updates.sass">

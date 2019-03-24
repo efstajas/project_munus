@@ -1,0 +1,30 @@
+$elevation-transition-duration: 0.2s;
+$elevation-transition-curve: cubic-bezier(0.4,0.0,0.2,1)
+
+$border-color: #F1F1F1
+
+$elevation-base-shadow: 0px 0px 3px rgba(0, 0, 0, 0.05)
+
+@mixin elevation($level, $border: true)
+    @if $level == 0
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.05), 0px 0px 0px rgba(0, 0, 0, 0.13)
+        @if $border 
+            border: 2px solid $border-color
+    @if $level == 1
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.13), $elevation-base-shadow
+        @if $border 
+            border: 2px solid rgba(0,0,0,0)
+    @if $level == 2
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.13), $elevation-base-shadow
+        @if $border 
+            border: 2px solid rgba(0,0,0,0)
+    @if $level == 3
+        box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.13), $elevation-base-shadow
+        @if $border 
+            border: 2px solid rgba(0,0,0,0)
+
+@mixin elevation-transition($border: true)
+    @if $border 
+        transition: border $elevation-transition-duration $elevation-transition-curve, box-shadow $elevation-transition-duration $elevation-transition-curve
+    @else 
+        transition: box-shadow $elevation-transition-duration $elevation-transition-curve

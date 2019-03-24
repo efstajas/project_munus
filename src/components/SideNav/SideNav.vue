@@ -6,30 +6,30 @@
     <div class="items">
       <div class="top">
         <SideNavItem
-          v-on:click.native="selectedSlug = item.slug"
-          :active="($route.name === item.slug)"
-          v-for="item in sideNavData.items"
-          :key="item.id"
-          :title="item.title"
+          v-on:click.native="selectedSlug = item.meta.slug"
+          :active="($route.name === item.meta.slug)"
+          v-for="item in sideNavData"
+          :key="item.meta.slug"
+          :title="item.meta.title"
           :minimized="collapsed"
-          :icon="item.icon"
+          :icon="item.meta.icon"
           class="topItem"
-          :rgb="item.rgb"
-					:slug="item.slug"
+          :rgb="item.meta.color"
+					:slug="item.meta.slug"
         />
       </div>
       <div class="bottom">
 				<ColorThemePicker /> 
         <SideNavItem
-          v-on:click.native="selectedSlug = item.slug"
-          :active="($route.name === item.slug)"
-          v-for="item in sideNavData.bottomItems"
-          :key="item.id"
-          :title="item.title"
+          v-on:click.native="selectedSlug = item.meta.slug"
+          :active="($route.name === item.meta.slug)"
+          v-for="item in sideNavBottomData"
+          :key="item.meta.slug"
+          :title="item.meta.title"
           :minimized="collapsed"
-          :icon="item.icon"
+          :icon="item.meta.icon"
           class="topItem"
-					:slug="item.slug"
+					:slug="item.meta.slug"
         />
       </div>
     </div>
@@ -38,7 +38,6 @@
 
 <script>
 import SideNavItem from "./components/SideNavItem";
-import SideNavData from "./sideNavData";
 import ColorThemePicker from './components/ColorThemePicker'
 import hamburgerIcon from "@/assets/hamburger.svg";
 
@@ -50,7 +49,8 @@ export default {
   },
   data() { 
     return {
-      sideNavData: SideNavData,
+      sideNavData: this.$router.options.routes.filter(route => route.meta && route.meta.view && !route.meta.sideNavBottom),
+      sideNavBottomData: this.$router.options.routes.filter(route => route.meta && route.meta.view && route.meta.sideNavBottom),
       selectedSlug: 1,
       collapsed: true,
       hamburgerImage: hamburgerIcon
