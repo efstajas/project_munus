@@ -39,9 +39,9 @@ export default new Router({
         view: true,
         title: 'Campaigns',
         icon: Discount,
-
         slug: 'campaigns',
-        color: [66,134,244]
+        color: [66,134,244],
+        id: 1234
       }
     },
     {

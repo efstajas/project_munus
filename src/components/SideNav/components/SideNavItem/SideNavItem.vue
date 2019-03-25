@@ -1,5 +1,5 @@
 <template>
-  <router-link :style="{backgroundColor: backgroundColor}" :to="slug" :class="{ active: active, dark: $store.state.dark }" v-ripple.600="'rgba(0, 0, 0, 0.1)'" class="SideNavItem">
+  <router-link :style="{backgroundColor: backgroundColor}" :to="slug" :class="{ active: active, dark: $store.state.dark }" v-ripple.600="rippleColor" class="SideNavItem">
     <div class="icon">
       <!--img :src="icon"/>-->
       <Icon :url="icon" :rgba="iconColor"/>
@@ -42,10 +42,14 @@ export default {
         return `rgba(${this.rgb[0]},${this.rgb[1]},${this.rgb[2]},0.1)`
       } else if (this.active && this.$store.state.dark) {
         return 'rgba(255,255,255,0.07)'
-      } else {
+      } else if (this.active) {
         return 'rgba(0,0,0,0.07)'
+      } else {
+        return null
       }
-      
+    },
+    rippleColor() {
+      return 'rgba(0,0,0,0.1)'
     }
   },
   created() {
