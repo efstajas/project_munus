@@ -1,5 +1,7 @@
 # project_munus
 
+Make sure to install the Inter font locally. I didn't have time to set up the font in here. https://github.com/rsms/inter/releases/download/v3.3/Inter-3.3.zip 
+
 ## Project setup
 ```
 yarn install
